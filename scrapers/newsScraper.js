@@ -1,5 +1,4 @@
 // Parses our HTML and helps us find elements
-newsScraper = () => {
 var mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/onion");
 var cheerio = require("cheerio");
@@ -8,13 +7,17 @@ var cheerio = require("cheerio");
 var axios = require("axios");
 var db = require("../models");
 
-// First, tell the console what server.js is doing
+newsScraper ={
+
+  scrape: () => {
+    
+    // First, tell the console what server.js is doing
 console.log("\n***********************************\n" +
   "Grabbing every Onion Article\n" +
   "from the Onion homepage:" +
   "\n***********************************\n");
 
-
+  
     // Making a request via axios for reddit's "webdev" board. The page's HTML is passed as the callback's third argument
     axios.get("https://www.theonion.com/").then(function (response) {
       console.log("response recieved...");
@@ -72,9 +75,10 @@ console.log("\n***********************************\n" +
         }
       }).catch(err=>console.log(err));
       
-  });
+    });
   // Log the results once you've looped through each of the elements found with cheerio
 });
 }
+} 
 
 module.exports = newsScraper;
