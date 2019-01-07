@@ -1,8 +1,7 @@
 // Parses our HTML and helps us find elements
 newsScraper = () => {
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/onion", { useNewUrlParser: true });
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/onion");
 var cheerio = require("cheerio");
 
 // Makes HTTP request for HTML page
