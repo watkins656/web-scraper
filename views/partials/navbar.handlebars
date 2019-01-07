@@ -1,0 +1,26 @@
+<span>
+    <a href="/about">
+        Mongo Scraper
+    </a>
+</span> |
+<span>
+    <a href="/">
+        Home
+    </a>
+</span> |
+<span>
+    <button onclick="scrape()">Scrape New Articles</button>
+</span> |
+<span>
+    <a href="/saved">
+        Saved articles
+    </a>
+</span>
+
+<script>
+    scrape = () => {
+$.get( "/scrape", function( data ) {
+  alert( "Scraping" + data);
+});
+    } 
+</script>

@@ -1,0 +1,17 @@
+  {{> navbar}}
+
+
+
+<h1>Articles from the Onion</h1>
+
+
+
+<ul>
+  {{#each articles}}
+  <h3>{{headline}}</h3>
+  <p>{{excerpt}}</p>
+  <a href={{link}}>Click Here for More!</a>
+  <button>SAVE ARTICLE</button>
+<hr>
+  {{/each}}
+</ul>
