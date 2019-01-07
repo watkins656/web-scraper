@@ -1,22 +1,23 @@
+<div class="navbar">
 <span>
-    <a href="/about">
+    <a id="logo" href="/about">
         Mongo Scraper
     </a>
 </span> |
 <span>
-    <a href="/">
+    <a id="home" href="/">
         Home
     </a>
 </span> |
 <span>
-    <button onclick="scrape()">Scrape New Articles</button>
-</span> |
-<span>
-    <a href="/saved">
+    <a id="saved" href="/saved">
         Saved articles
     </a>
-</span>
+</span> |
 
+<span>
+    <button id="scrape" onclick="scrape()">Scrape New Articles</button>
+</span>
 <script>
     scrape = () => {
 $.get( "/scrape", function( data ) {
@@ -24,3 +25,20 @@ $.get( "/scrape", function( data ) {
 });
     } 
 </script>
+<style>
+    .navbar{
+        background-color: #3b93f9;
+        height: 80px;
+    }
+    #logo, #home, #saved, #scrape{
+        color: white;
+        font-style: bold;
+        font-size: 16pt;
+        text-decoration: none;
+    }
+    #scrape{
+          background-color: red; 
+
+    }
+</style>
+</div>

@@ -1,17 +1,39 @@
-  {{> navbar}}
+{{> navbar}}
 
 
+<div>
 
-<h1>Articles from the Onion</h1>
+  <div id="articlesbackdrop">
+    <h1>Articles from the Onion</h1>
+  </div>
 
 
+  <ul>
+    {{#each articles}}
+    <h3>{{headline}}</h3>
+    <p>{{excerpt}}</p>
+    <a href={{link}}>Click Here for More!</a>
+    <button>SAVE ARTICLE</button>
+    <hr>
+    {{/each}}
+  </ul>
 
-<ul>
-  {{#each articles}}
-  <h3>{{headline}}</h3>
-  <p>{{excerpt}}</p>
-  <a href={{link}}>Click Here for More!</a>
-  <button>SAVE ARTICLE</button>
-<hr>
-  {{/each}}
-</ul>
+  <style>
+    #articlesbackdrop {
+      margin: auto;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.theatlantic.com/assets/media/img/mt/2015/05/shutterstock_247399801/lead_720_405.jpg?mod=1533691742");
+      line-height: 380px;
+      height: 400px;
+      width: 80%;
+      color: white;
+      text-emphasis: bold;
+      font-size: 60px;
+      text-align: center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    }
+  </style>
+</div>
