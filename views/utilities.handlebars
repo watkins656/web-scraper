@@ -1,0 +1,13 @@
+
+{{> navbar}}
+
+
+<p>Click <a href="/clear">HERE</a> to empty the database</p>
+
+<script>
+   clearDatabase =function (){
+    $.get("clear", function (data, status) {
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  };
+</script>

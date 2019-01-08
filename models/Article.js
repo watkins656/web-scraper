@@ -26,7 +26,15 @@ var ArticleSchema = new Schema({
   // This allows us to populate the Article with an associated Note
   category: {
     type: String,
-  }
+  },
+  saved: {
+    type:Boolean,
+    default: false,
+  },
+note: {
+    type: String,
+    default: '',
+  },
 });
 
 // This creates our model from the above schema, using mongoose's model method

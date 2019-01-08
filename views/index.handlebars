@@ -13,7 +13,7 @@
     <h3>{{headline}}</h3>
     <p>{{excerpt}}</p>
     <a href={{link}}>Click Here for More!</a>
-    <button>SAVE ARTICLE</button>
+    <button onclick="save('{{id}}')">SAVE ARTICLE</button>
     <hr>
     {{/each}}
   </ul>
@@ -34,6 +34,29 @@
       -o-background-size: cover;
       background-size: cover;
     }
-    }
   </style>
 </div>
+<footer>
+  <a href="/utils">
+    <button>Utilities</button>
+  </a>
+</footer>
+
+<script>
+  function save(id) {
+    $.ajax({
+
+      url: `api/articles/${id}`,
+
+      type: 'PUT',
+
+      data: {
+
+        "saved": true,
+      }
+
+    });
+
+
+  }
+</script>
